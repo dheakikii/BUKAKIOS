@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buka Kios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #c8e6c9, #e8f5e9); /* Background gradasi hijau */
+            color: #333;
+        }
+
+        header {
+            background-color: #4caf50; /* Hijau gelap untuk header */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            width: 150px; /* Atur lebar gambar untuk mengurangi ukuran */
+            height: auto; /* Pertahankan rasio aspek */
+            margin-bottom: 10px; /* Jarak antara gambar dan teks */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: #ffffff; /* Warna putih untuk kartu */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 250px; /* Lebar kartu */
+            text-align: center;
+            transition: transform 0.2s; /* Efek hover */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Efek mengangkat saat hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4caf50; /* Warna hijau untuk judul */
+        }
+
+        button {
+            background-color: #4caf50; /* Warna hijau untuk tombol */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Efek hover tombol */
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #388e3c; /* Warna hijau gelap saat hover */
+        }
+
+        footer {
+            background-color: #4caf50; /* Warna hijau untuk footer */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Ganti Gambar</title>
+    <style>
+        body {
+            margin: 0; /* Menghapus margin pada body */
+            font-family: Arial, sans-serif; /* Mengatur font */
+        }
+        #header {
+            position: relative;
+            height: 300px; /* Tinggi header */
+            overflow: hidden; /* Menyembunyikan gambar yang melampaui batas */
+        }
+        .slides {
+            display: flex; /* Mengatur elemen anak dalam baris */
+            transition: transform 1s ease; /* Transisi saat berganti gambar */
+            width: 100%; /* Lebar penuh */
+            height: 100%; /* Tinggi penuh */
+        }
+        .slide {
+            min-width: 100%; /* Setiap slide mengambil lebar penuh */
+            height: 100%; /* Tinggi penuh */
+            background-size: cover; /* Mengatur ukuran gambar agar mengisi seluruh elemen */
+            background-position: center; /* Memusatkan gambar */
+        }
+        h1 {
+            position: absolute;
+            top: 10px; /* Jarak dari atas */
+            left: 20px; /* Jarak dari kiri */
+            color: white; /* Warna teks */
+            z-index: 1; /* Agar teks di atas gambar */
+        }
+        .container {
+            display: flex; /* Mengatur konten dalam baris */
+            flex-wrap: wrap; /* Membuat konten baris baru saat overflow */
+            justify-content: space-around; /* Mengatur jarak antar card */
+            padding: 20px; /* Padding untuk konten */
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan */
+            width: 250px; /* Lebar card */
+            height: 200px; /* Tinggi card */
+            margin: 10px; /* Margin antar card */
+            padding: 10px; /* Padding dalam card */
+            border-radius: 10px; /* Sudut membulat */
+            background-size: cover; /* Mengatur ukuran gambar agar mengisi seluruh elemen */
+            display: flex;
+            flex-direction: column; /* Mengatur elemen dalam card secara vertikal */
+            align-items: center; /* Memusatkan elemen */
+            color: black; /* Warna teks */
+            text-align: center; /* Memusatkan teks */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Memberikan efek bayangan pada card */
+        }
+        h2 {
+            font-weight: bold; /* Menebalkan teks */
+            color: black; /* Warna teks h2 */
+        }
+        p {
+            font-weight: bold; /* Menebalkan teks */
+            color: white; /* Warna teks putih */
+            text-shadow: 1px 1px 2px black; /* Menambahkan bayangan pada teks */
+            margin: 0; /* Menghapus margin pada deskripsi */
+            flex-grow: 1; /* Mengizinkan teks untuk tumbuh dan mengambil ruang */
+        }
+        button {
+            background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; /* Menghapus border tombol */
+            padding: 8px 16px; /* Padding dalam tombol */
+            border-radius: 5px; /* Sudut membulat tombol */
+            cursor: pointer; /* Mengubah cursor saat hover */
+            transition: background-color 0.3s; /* Transisi saat hover */
+            width: 100%; /* Tombol mengambil lebar penuh */
+            margin-top: 10px; /* Jarak atas tombol */
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.9); /* Warna saat hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <div class="slides">
+            <div class="slide" style="background-image: url('bukakios.png');"></div>
+            <div class="slide" style="background-image: url('image1.jpg');"></div>
+            <div class="slide" style="background-image: url('image2.jpg');"></div>
+            <div class="slide" style="background-image: url('image3.jpg');"></div>
+            <!-- Tambahkan slide gambar lainnya sesuai kebutuhan -->
+        </div>
+        <h1>Buka Kios</h1>
+    </div>
+
+    <div class="container">
+        <div class="card" style="background-image: url('gambarpulsa.png');">
+            <h2>Isi Pulsa</h2>
+            <p>Isi ulang pulsa dengan mudah!</p>
+            <a href="pembayaran-pulsa.html"><button>Beli Sekarang</button></a>
+        </div>
+
+        <div class="card" style="background-image: url('gambarpaketdata.png');">
+            <h2>Paket Data</h2>
+            <p>Dapatkan paket data terbaik untuk Anda!</p>
+            <a href="pembayaran-paket.html"><button>Beli Sekarang</button></a>
+        </div>
+
+        <div class="card" style="background-image: url('gambarwallet.png');">
+            <h2>Top Up E-Wallet</h2>
+            <p>Dapatkan Diskon 99% untuk pembelian saldo E-Wallet pertamamu!</p>
+            <a href="pembayaran-langganan.html"><button>Beli Sekarang</button></a>
+        </div>
+
+        <div class="card" style="background-image: url('gambarcvpulsa.png');">
+            <h2>CV Pulsa</h2>
+            <p>Beragam pilihan paket pulsa untuk kebutuhan CV Anda!</p>
+            <a href="pembayaran-cvpulsa.html"><button>Beli Sekarang</button></a>
+        </div>
+
+        <div class="card" style="background-image: url('gambardiamond.png');">
+            <h2>Diamond Game</h2>
+            <p>Top up Diamond untuk game kesayangan Anda!</p>
+            <a href="pembayaran-diamond.html"><button>Beli Sekarang</button></a>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount; // Ganti indeks gambar
+            const offset = -currentIndex * 100; // Hitung offset untuk scroll
+            slides.style.transform = `translateX(${offset}%)`; // Terapkan offset
+        }
+
+        // Ganti gambar setiap 3 detik
+        setInterval(showNextSlide, 3000);
+    </script>
+
+</body>
+</html>
+
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount; // Ganti indeks gambar
+            const offset = -currentIndex * 100; // Hitung offset untuk scroll
+            slides.style.transform = `translateX(${offset}%)`; // Terapkan offset
+        }
+
+        // Ganti gambar setiap 3 detik
+        setInterval(showNextSlide, 3000);
+    </script>
+
+</body>
+</html>
+
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount; // Ganti indeks gambar
+            const offset = -currentIndex * 100; // Hitung offset untuk scroll
+            slides.style.transform = `translateX(${offset}%)`; // Terapkan offset
+        }
+
+        // Ganti gambar setiap 3 detik
+        setInterval(showNextSlide, 3000);
+    </script>
+
+</body>
+</html>
+
+</div>
+</div>
+       
+        </div>
+    </main>
+    <footer> 
+        <p>&copy; 2023 Buka Kios</p>
+    </footer>
+</body>
+</html>
